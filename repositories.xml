@@ -9,7 +9,7 @@
       <email>dwfreed@mtu.edu</email>
       <name><![CDATA[dwfreed]]></name>
     </owner>
-    <source type="git">git://dwfreed@bitbucket.org/dwfreed/dwfreed.gentoo</source>
+    <source type="git">https://bitbucket.org/dwfreed/dwfreed.gentoo</source>
     <feed>https://bitbucket.org/dwfreed/dwfreed.gentoo/rss</feed>
   </repo>
 </repositories>
