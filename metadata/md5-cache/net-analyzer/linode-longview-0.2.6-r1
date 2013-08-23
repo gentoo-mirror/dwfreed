@@ -1,0 +1,11 @@
+DEFINED_PHASES=install postinst
+DESCRIPTION=Linode Longview
+EAPI=5
+HOMEPAGE=https://www.linode.com/longview/
+KEYWORDS=amd64 x86
+LICENSE=Artistic GPL-2
+RDEPEND=app-portage/eix dev-perl/IO-Socket-INET6 dev-perl/JSON dev-perl/Log-LogLite dev-perl/libwww-perl[ssl] dev-perl/Linux-Distribution
+SLOT=0
+SRC_URI=https://github.com/linode/longview/archive/v0.2.6.tar.gz -> linode-longview-0.2.6.tar.gz
+_eclasses_=eutils	63afaaed8aa819fdcb814c7cd39495a2	multilib	892e597faee02a5b94eb02ab512e7622	toolchain-funcs	7ffd28a8c7eea27218865352bfd3ab2f	user	d0a4d0735a6c0183d707ca919bd72f28
+_md5_=927780f4b93c9ee3323fb11963fe1461

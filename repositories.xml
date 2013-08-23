@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="testing" status="unofficial">
+    <name><![CDATA[dwfreed]]></name>
+    <description lang="en"><![CDATA[My random Gentoo packages]]></description>
+    <homepage>https://bitbucket.org/dwfreed/dwfreed.gentoo/</homepage>
+    <owner type="person">
+      <email>dwfreed@mtu.edu</email>
+      <name><![CDATA[dwfreed]]></name>
+    </owner>
+    <source type="git">git://dwfreed@bitbucket.org/dwfreed/dwfreed.gentoo</source>
+  </repo>
+</repositories>
