@@ -24,6 +24,7 @@ RDEPEND="
 	dev-perl/Log-LogLite
 	dev-perl/libwww-perl[ssl]
 	dev-perl/Linux-Distribution
+	dev-perl/Try-Tiny
 "
 
 src_install(){
