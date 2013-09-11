@@ -13,7 +13,7 @@ MY_PN="${PN/linode-/}"
 SRC_URI="https://github.com/linode/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
@@ -24,6 +24,7 @@ RDEPEND="
 	dev-perl/Log-LogLite
 	dev-perl/libwww-perl[ssl]
 	dev-perl/Linux-Distribution
+	dev-perl/Try-Tiny
 "
 
 MY_P="${P/linode-/}"
