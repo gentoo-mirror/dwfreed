@@ -28,8 +28,9 @@ RDEPEND="
 "
 
 src_install(){
-	dodir /opt/linode/longview
-	cp -r Linode "${D}"/opt/linode/longview
+	insinto /opt/linode/longview
+	doins -r Linode
+	fperms +x /opt/linode/longview/Linode/Longview.pl
 	keepdir /etc/linode
 	newinitd "${FILESDIR}"/longview.openrc longview
 }
