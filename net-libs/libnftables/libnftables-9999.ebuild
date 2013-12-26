@@ -23,7 +23,6 @@ DEPEND="virtual/pkgconfig
 RDEPEND="${COMMON_DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/libnftables-9999-*.patch
 	eautoreconf
 }
 
