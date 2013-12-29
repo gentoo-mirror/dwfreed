@@ -5,7 +5,7 @@
 EAPI=5
 EGIT_REPO_URI="git://git.netfilter.org/${PN}"
 
-inherit autotools git-r3
+inherit autotools git-r3 linux-info
 
 DESCRIPTION="User-space library for low-level interaction with nftables Netlink's API over libmnl"
 HOMEPAGE="http://netfilter.org/projects/nftables/"
@@ -21,6 +21,15 @@ COMMON_DEPEND=">=net-libs/libmnl-1.0.0
 DEPEND="virtual/pkgconfig
 		${COMMON_DEPEND}"
 RDEPEND="${COMMON_DEPEND}"
+
+pkg_setup() {
+	if kernel_is ge 3 13; then
+		CONFIG_CHECK="~NF_TABLES"
+		linux-info_pkg_setup
+	else
+		eerror "This package requires kernel version 3.13 or newer to work properly."
+	fi
+}
 
 src_prepare() {
 	eautoreconf
