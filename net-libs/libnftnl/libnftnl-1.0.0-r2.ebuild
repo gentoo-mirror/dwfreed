@@ -1,19 +1,19 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
-EGIT_REPO_URI="git://git.netfilter.org/${PN}"
 
-inherit autotools git-r3 linux-info
+inherit eutils linux-info toolchain-funcs
 
-DESCRIPTION="User-space library for low-level interaction with nftables Netlink's API over libmnl"
+DESCRIPTION="Netlink API to the in-kernel nf_tables subsystem"
 HOMEPAGE="http://netfilter.org/projects/nftables/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="xml json"
+KEYWORDS="amd64 x86"
+IUSE="xml json examples static-libs"
+SRC_URI="http://netfilter.org/projects/${PN}/files/${P}.tar.bz2"
 
 COMMON_DEPEND=">=net-libs/libmnl-1.0.0
 		xml? ( >=dev-libs/mini-xml-2.6 )
@@ -32,11 +32,24 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eautoreconf
+	epatch "${FILESDIR}"/libnftnl-1.0.0-91264d8.patch
 }
 
 src_configure() {
 	econf \
+		$(use_enable static-libs static) \
 		$(use_with xml xml-parsing) \
 		$(use_with json json-parsing)
+}
+
+src_install() {
+	default
+	gen_usr_ldscript -a nftnl
+	prune_libtool_files
+
+	if use examples; then
+		find examples/ -name 'Makefile*' -delete
+		dodoc -r examples/
+		docompress -x /usr/share/doc/${PF}/examples
+	fi
 }
