@@ -1,0 +1,31 @@
+diff --git a/include/iscsi_if.h b/include/iscsi_if.h
+index dad9fd8..71171ab 100644
+--- a/include/iscsi_if.h
++++ b/include/iscsi_if.h
+@@ -131,7 +131,7 @@ struct iscsi_uevent {
+ 			uint32_t	cid;
+ 			uint64_t	transport_eph;
+ 			uint32_t	is_leading;
+-		} b_conn;
++		} b_conn __attribute__((aligned (sizeof(uint64_t))));
+ 		struct msg_destroy_conn {
+ 			uint32_t	sid;
+ 			uint32_t	cid;
+@@ -157,7 +157,7 @@ struct iscsi_uevent {
+ 			uint32_t	cid;
+ 			uint64_t	conn_handle;
+ 			uint32_t	flag;
+-		} stop_conn;
++		} stop_conn __attribute__((aligned (sizeof(uint64_t))));
+ 		struct msg_get_stats {
+ 			uint32_t	sid;
+ 			uint32_t	cid;
+@@ -206,7 +206,7 @@ struct iscsi_uevent {
+ 			uint32_t	payload_size;
+ 			uint32_t	pid;	/* unique ping id associated
+ 						   with each ping request */
+-		} iscsi_ping;
++		} iscsi_ping __attribute__((aligned (sizeof(uint64_t))));
+ 		struct msg_get_chap {
+ 			uint32_t	host_no;
+ 			uint32_t	num_entries; /* number of CHAP entries
