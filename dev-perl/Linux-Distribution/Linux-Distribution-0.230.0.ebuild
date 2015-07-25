@@ -11,7 +11,7 @@ inherit perl-module
 DESCRIPTION="Detect on which Linux distribution we are running"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND=""
