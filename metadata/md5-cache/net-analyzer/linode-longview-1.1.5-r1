@@ -1,6 +1,6 @@
 DEFINED_PHASES=install postinst
 DESCRIPTION=Linode Longview
-EAPI=5
+EAPI=6
 HOMEPAGE=https://www.linode.com/longview/
 IUSE=mysql
 KEYWORDS=amd64 x86
@@ -9,4 +9,4 @@ RDEPEND=app-portage/eix dev-perl/IO-Socket-INET6 dev-perl/JSON dev-perl/Log-LogL
 SLOT=0
 SRC_URI=https://github.com/linode/longview/archive/v1.1.5.tar.gz -> linode-longview-1.1.5.tar.gz
 _eclass_exported_funcs=pkg_postinst:- src_install:-
-_md5_=6dd61d1c3b6726a3ccca98799cd4e7b6
+_md5_=067dbef5c06108311f50f4699e530538
