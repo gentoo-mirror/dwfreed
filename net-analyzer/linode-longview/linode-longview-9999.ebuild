@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 EGIT_REPO_URI="git://github.com/linode/longview.git"
 
-inherit eutils git-2
+inherit eutils git-r3
 
 DESCRIPTION="Linode Longview"
 HOMEPAGE="https://www.linode.com/longview/"
