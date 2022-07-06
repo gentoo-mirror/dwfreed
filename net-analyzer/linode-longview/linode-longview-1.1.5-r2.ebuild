@@ -3,16 +3,14 @@
 
 EAPI=8
 
-EGIT_REPO_URI="git://github.com/linode/longview.git"
-
-inherit git-r3
-
 DESCRIPTION="Linode Longview"
 HOMEPAGE="https://www.linode.com/longview/"
 LICENSE="Artistic GPL-2"
+MY_PN="${PN/linode-/}"
+SRC_URI="https://github.com/linode/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="mysql"
 
 DEPEND=""
@@ -29,6 +27,9 @@ RDEPEND="
 		dev-perl/DBD-mysql
 	)
 "
+
+MY_P="${P/linode-/}"
+S="${WORKDIR}/${MY_P}"
 
 src_install(){
 	insinto /opt/linode/longview
